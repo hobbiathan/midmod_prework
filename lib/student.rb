@@ -18,6 +18,16 @@ class Student
     end
   end
 
+  def grade
+    average_grade = nil
+    total_grade_value = 0
+    @scores.each do |scores|
+      total_grade_value += scores
+    end
+
+    average_grade = total_grade_value.to_f / @scores.size.to_f
+  end
+
 
 
 end
