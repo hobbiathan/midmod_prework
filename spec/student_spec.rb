@@ -18,6 +18,12 @@ RSpec.describe 'Student' do
     expect(student.name).to eq("Morgan")
   end
 
+  it 'can read a given hash :age key value' do
+    student = Student.new({name: "Morgan", age: 21})
+
+    expect(student.age).to eq(21)
+  end
+
 
 
 end
