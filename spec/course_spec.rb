@@ -17,4 +17,9 @@ RSpec.describe 'Course' do
     expect(course.capacity).to eq(2)
   end
 
+  it 'initializes empty students array on instance' do
+    course = Course.new("Calculus", 2)
+    expect(course.students).to eq([])
+  end
+
 end
