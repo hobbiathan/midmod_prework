@@ -8,7 +8,7 @@ class Course
   end
 
   def full?
-    if @students.size <= @capacity
+    if @students.size < @capacity
       false
     elsif @students.size >= @capacity
       true
