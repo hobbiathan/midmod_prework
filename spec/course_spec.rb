@@ -12,4 +12,9 @@ RSpec.describe 'Course' do
     expect(course.name).to eq("Calculus")
   end
 
+  it 'can read a Course capacity' do
+    course = Course.new("Calculus", 2)
+    expect(course.capacity).to eq(2)
+  end
+
 end
