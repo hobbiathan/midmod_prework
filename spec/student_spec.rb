@@ -34,8 +34,16 @@ RSpec.describe 'Student' do
     student = Student.new({name: "Morgan", age: 21})
     student.log_score(89)
     student.log_score(78)
-    require 'pry'; binding.pry
     expect(student.scores).to eq([89, 78])
+  end
+
+  it 'can average all scores' do
+    student = Student.new({name: "Morgan", age: 21})
+    student.log_score(89)
+    student.log_score(78)
+
+    expect(student.grade).to eq(83.5)
+
   end
 
 
