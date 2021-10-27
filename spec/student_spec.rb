@@ -30,6 +30,13 @@ RSpec.describe 'Student' do
     expect(student.scores).to eq([])
   end
 
+  it 'can input numbers into scores array' do
+    student = Student.new({name: "Morgan", age: 21})
+    student.log_score(89)
+    student.log_score(78)
+    require 'pry'; binding.pry
+    expect(student.scores).to eq([89, 78])
+  end
 
 
 end
