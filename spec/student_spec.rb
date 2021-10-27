@@ -24,6 +24,12 @@ RSpec.describe 'Student' do
     expect(student.age).to eq(21)
   end
 
+  it 'can read the empty scores array on initialization' do
+    student = Student.new({name: "Morgan", age: 21})
+
+    expect(student.scores).to eq([])
+  end
+
 
 
 end
