@@ -19,12 +19,12 @@ class Student
   end
 
   def grade
-    average_grade = nil
+    average_grade = nil # Could've also been initialized as 0s
     total_grade_value = 0
     @scores.each do |scores|
-      total_grade_value += scores
+      total_grade_value += scores # Total all values in scores
     end
-
+    # Divide total value by total amount of elements in scores (as floats)
     average_grade = total_grade_value.to_f / @scores.size.to_f
   end
 
