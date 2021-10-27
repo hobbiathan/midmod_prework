@@ -21,12 +21,6 @@ RSpec.describe 'Course' do
     course = Course.new("Calculus", 2)
     expect(course.students).to eq([])
   end
-
-  it 'can check capacity with full? (empty)' do
-    course = Course.new("Calculus", 2)
-    expect(course.full?).to be false
-  end
-
   # I should've written the enroll before full?
 
   it 'can push student object to students array' do
@@ -41,5 +35,20 @@ RSpec.describe 'Course' do
     expect(course.students).to eq(expected_array)
   end
 
+  it 'can check capacity with full? (empty)' do
+    course = Course.new("Calculus", 2)
+    expect(course.full?).to be false
+  end
+
+  it 'can check capacity with full? (full)' do
+    course = Course.new("Calculus", 2)
+    student_1 = Student.new({name: "Morgan", age: 21})
+    student_2 = Student.new({name: "Jordan", age: 29})
+
+    course.enroll(student_1)
+    course.enroll(student_2)
+    
+    expect(course.full?).to be true
+  end
 
 end
