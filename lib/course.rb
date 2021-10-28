@@ -20,4 +20,10 @@ class Course
   def enroll(student_obj)
     @students << student_obj
   end
+
+  def call_students # Return student names as an array
+    @students.map do |student|
+      student.name
+    end
+  end
 end
