@@ -7,7 +7,19 @@ class Term
     @courses = []
   end
 
-  def add_course(new_course)
+  def add_course(new_course) # Push a given course into our course array
     @courses << new_course
+  end
+
+  def list_courses
+ # Shove all courses that are not at capacity into open_courses[]
+    open_courses = []
+    @courses.each do |course|
+      if course.full? == false
+        open_courses << course
+      end
+    end
+    # Return all open courses
+    open_courses
   end
 end
