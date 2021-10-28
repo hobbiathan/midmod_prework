@@ -1,3 +1,4 @@
+
 class Term
 
   attr_reader :name, :courses
@@ -6,4 +7,7 @@ class Term
     @courses = []
   end
 
+  def add_course(new_course)
+    @courses << new_course
+  end
 end
