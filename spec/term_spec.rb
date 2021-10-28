@@ -28,6 +28,27 @@ RSpec.describe 'Term' do
     term.add_course(course_two)
 
     expect(term.courses).to eq(expected_array)
+  end
+
+  it 'can return array of open courses' do
+    term = Term.new("Winter 2018")
+
+    student_one = Student.new({name: "Morgan", age: 21})
+    student_two = Student.new({name: "Joe", age: 235135})
+
+
+    course_one = Course.new("Calculus", 2)
+    course_two = Course.new("Molecular Biology", 3)
+
+    course_one.enroll(student_one)
+    course_one.enroll(student_two)
+
+    term.add_course(course_one)
+    term.add_course(course_two)
+
+    require 'pry'; binding.pry
+
+    expect(term.list_courses).to eq([course_two])
 
   end
 
